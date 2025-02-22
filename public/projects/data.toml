@@ -1,0 +1,10 @@
+[[project]]
+name = "Beyond Classical Computing: Legal Frameworks for a Post-Classical Computing"
+desc = "I investigate the implications of quantum computing on the legal frameworks around data protection, intellectual property and antitrust law."
+tags = ["technology", "law"]
+img = ""
+links = [
+  { name = "", url = "" },
+#  { name = "", url = "" },
+]
+
