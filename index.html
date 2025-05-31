@@ -3,90 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna's Scratchpad on the Internet - Retro Edition!</title>
+    <title>Krishna Jani - Academic Profile</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts link removed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header id="main-header">
-            <h1><a href="index.html" class="color-cycling-text">Krishna's Scratchpad on the Internet</a> <span class="quirky-icon icon-computer blinking-element"></span></h1>
-            <div style="text-align:center; margin-bottom:10px;">
-                 <span class="under-construction-text">Now More Retro!</span>
-            </div>
-            <nav> <!-- This nav was styled with #main-header nav ul in style.css -->
+            <h1><a href="index.html">Krishna Jani</a></h1>
+            <!-- <p class="site-subtitle">Researcher in Law & Technology</p> -->
+            <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="books.html">Books</a></li>
-                    <li><a href="music.html">Music</a></li>
+                    <li><a href="index.html" class="active">Home</a></li> <!-- 'active' class for current page -->
+                    <li><a href="posts.html">Blog</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <section id="intro" style="text-align: center; margin-bottom: 20px;">
-                <h2><span class="quirky-icon icon-gavel blinking-element"></span> Welcome to my Corner of the Web! <span class="quirky-icon icon-gavel blinking-element"></span></h2>
-                <p>Namaskaram! I am Krishna.</p>
-                <p>This is my little scratchpad, away from the mainstream web. <br>
-                   <span class="css-marquee">No algorithms, just pure HTML vibes!</span></p>
-                <!-- Placeholder GIF replaced with text/icon -->
-                <p><span class="quirky-icon icon-computer" style="font-size: 2em;"></span> (My Cool Spinning Logo - Placeholder)</p>
+            <section id="introduction">
+                <h2>About Me</h2>
+                <p>I am Krishna Jani, an aspiring academic with a keen interest in the intersection of law, technology, and society. My current research focuses on [mention specific area if desired, e.g., the legal implications of artificial intelligence or the regulatory challenges of quantum computing].</p>
+                <p>This website serves as a platform to share my research, thoughts, and other academic activities. I am passionate about [mention a passion, e.g., fostering interdisciplinary dialogue on emerging technologies or exploring ethical frameworks for innovation].</p>
             </section>
 
-            <section id="about">
-                <h3><span class="quirky-icon icon-computer"></span> About Me & This Site</h3>
-                <p>My academic pursuits are in law, but I'm also fascinated by the crossroads of law with quantum computing, smart contracts, and AI. I built this website from scratch to learn (and now re-learn in retro style!) web development.</p>
-                <p>If you'd like to chat, feel free to send an email:
-                    <a href="mailto:krishnajani@posteo.com">krishnajani@posteo.com</a>
-                    <span class="quirky-icon icon-floppy"></span> <!-- Placeholder GIF replaced -->
-                </p>
-            </section>
-
-            <section id="interests">
-                <h3>My Interests <span class="blinking-element" style="color: #FFFF00;">&#9733;</span></h3> <!-- Placeholder GIF replaced with blinking star -->
+            <section id="research-interests">
+                <h2>Research Interests</h2>
                 <ul>
-                    <li>Law & Technology <span class="quirky-icon icon-gavel"></span></li>
-                    <li>Quantum Computing <span class="quirky-icon icon-floppy blinking-element"></span> (representing data)</li>
-                    <li>Smart Contracts & AI</li>
-                    <li>Music <span class="quirky-icon icon-music"></span> - Check out my <a href="https://bandcamp.com/krsnaj" target="_blank" rel="noopener noreferrer">Bandcamp!</a> <span class="quirky-icon icon-music"></span></li>
+                    <li>Law and Quantum Computing</li>
+                    <li>Smart Contracts and Legal Frameworks</li>
+                    <li>Artificial Intelligence Ethics and Governance</li>
+                    <li>[Add another specific interest]</li>
+                    <li>[And another]</li>
                 </ul>
             </section>
 
-            <section id="cv-link">
-                 <p style="text-align:center;">Access my CV <a href="./cv.pdf" class="button">Here</a> <span class="quirky-icon icon-floppy"></span></p>
+            <section id="publications">
+                <h2>Publications & Writings</h2>
+                <p><em>(Coming soon / Selected works)</em></p>
+                <ul>
+                    <li>Jani, K. (Year). Title of Work. <em>Journal/Conference</em>. (Placeholder)</li>
+                    <li><a href="posts/towards-internet-federalism.html">'Towards Internet Federalism'</a> (Blog Post)</li>
+                    <li><a href="posts/post-1.html">'print("Hello World")'</a> (Blog Post)</li>
+                    <!-- Add more publications or link to a dedicated publications page -->
+                </ul>
             </section>
 
-            <!-- Renamed from #resources to #resources-nav to match previous structure and CSS -->
-            <nav id="resources-nav">
-                <h2>Resources:</h2> <!-- h2 was used in style.css (#resources-nav h2) -->
-                <ul>
-                    <li><a href="./books.html">Books I'm Reading</a></li>
-                    <li><a href="./music.html">Music I Enjoy</a></li>
-                </ul>
-            </nav>
+            <section id="cv-contact">
+                <h2>CV & Contact</h2>
+                <p>My full Curriculum Vitae is available for download: <a href="cv.pdf" class="button">Download CV</a></p>
+                <p>For inquiries or collaborations, please feel free to <a href="mailto:krishnajani@posteo.com">contact me via email</a>.</p>
+            </section>
 
-            <!-- Renamed from #recent-posts to #blog-nav to match previous structure and CSS -->
-            <nav id="blog-nav">
-                <h2>Recent Blog Posts <span class="blinking-element" style="color:red; font-weight:bold;">NEW!</span></h2> <!-- Placeholder GIF replaced -->
-                <ul>
-                    <li><a href="posts/post-1.html">print("Hello World")</a></li>
-                    <li><a href="posts/towards-internet-federalism.html">Towards 'Internet Federalism'</a></li>
-                </ul>
-            </nav>
         </main>
 
         <footer id="main-footer">
-            <div class="visitor-counter">Web Hits: <span>[004242]</span></div>
-            <p class="last-updated">Last Updated: 2024-05-31</p>
-            <p>
-                <span class="quirky-icon icon-floppy blinking-element"></span>
-                <a href="mailto:krishnajani@posteo.com">krishnajani@posteo.com</a>
-            </p>
-            <p>
-                <a href="https://www.theoldnet.com/" class="html-badge" target="_blank" rel="noopener noreferrer">Viewable on Old Browsers!</a>
-                <span class="html-badge">Powered by HTML & CSS!</span>
-            </p>
-            <p>&copy; 2024 Krishna Jani. All rights reserved... or are they? <span class="quirky-icon icon-gavel"></span></p>
+            <p>&copy; 2024 Krishna Jani. All rights reserved.</p>
+            <!-- <p><a href="[Link to University/Department]" target="_blank">University Department</a> | <a href="[Link to ORCID]" target="_blank">ORCID</a></p> -->
         </footer>
     </div>
 </body>

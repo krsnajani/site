@@ -1,424 +1,333 @@
-/* General Reset/Base */
+/* === Academic Professional Theme === */
+
+/* --- Global Resets & Base --- */
 body {
-    background-color: #000000; /* Black background */
-    color: #00FF00; /* Neon green text */
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #F8F8F8; /* Off-white background */
+    color: #333333; /* Dark gray text */
+    font-family: 'Merriweather', Georgia, 'Times New Roman', serif; /* Body font */
+    line-height: 1.7;
+    font-size: 17px; /* Slightly larger base font for readability */
     margin: 0;
     padding: 0;
-    font-size: 16px; /* Base font size */
-    display: block; /* Override any previous flex settings on body */
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
 }
 
 .container {
-    width: 90%;
-    max-width: 800px; /* Keep it somewhat contained */
-    margin: 10px auto;
-    padding: 15px;
-    border: 3px solid #00FF00; /* Neon green border for the main container */
-    box-shadow: 0 0 10px #00FF00; /* Neon glow effect */
-    background-color: #111111; /* Slightly lighter black for container */
+    max-width: 850px; /* Comfortable reading width */
+    margin: 30px auto;
+    padding: 20px 40px;
+    background-color: #FFFFFF; /* White content background */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+    border-radius: 3px; /* Slight rounding of container corners */
 }
 
-/* Headings */
+/* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lucida Console', 'Courier New', Courier, monospace; /* More blocky/pixel-like if available */
-    color: #FF00FF; /* Magenta for headings */
-    text-transform: uppercase; /* Classic retro feel */
-    letter-spacing: 2px;
-    border-bottom: 2px solid #00FFFF; /* Cyan underline */
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif; /* Heading font */
+    color: #222222; /* Slightly darker for headings */
+    line-height: 1.3;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    font-weight: 700; /* Bold headings */
 }
-/* Ensure links within headers inherit the new heading color or have specific retro styling */
-#main-header h1 a { /* Specific for site title / main header link */
-    color: #FF00FF;
+
+h1 { font-size: 2.4em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.3em; }
+
+p {
+    margin-bottom: 1.2em;
+}
+
+a {
+    color: #005A9C; /* Muted academic blue for links */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+}
+a:hover, a:focus {
+    color: #003D6B; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* --- Header & Navigation --- */
+#main-header { /* Assuming header tag with this ID from previous structure */
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #DDDDDD; /* Light gray border */
+    text-align: center; /* Center header content */
+}
+
+#main-header h1 {
+    font-size: 2.8em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+#main-header h1 a {
+    color: #333333;
     text-decoration: none;
 }
 #main-header h1 a:hover {
-    color: #FFFF00; /* Yellow hover for main site title */
+    color: #005A9C;
 }
 
-/* General heading links if any others exist, e.g. post titles if they are links */
-h2 a, h3 a, h4 a, h5 a, h6 a {
-    color: #FF00FF; /* Match heading color */
-    text-decoration: none; /* No underline, rely on border */
-}
-h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-    color: #FFFF00;
+#main-header .site-subtitle { /* For optional subtitle like "PhD Candidate" */
+    font-size: 1.1em;
+    color: #777777;
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    margin-top: 0;
 }
 
-
-/* Links */
-a {
-    color: #00FFFF; /* Cyan links */
-    text-decoration: underline;
-}
-a:hover {
-    color: #FFFF00; /* Yellow hover */
-    text-decoration: none;
-    background-color: #222222; /* Dark highlight on hover */
-}
-a:visited { /* Often avoided or styled same as 'a' in modern design, but classic for retro */
-    color: #FF00FF; /* Visited links magenta */
-}
-
-/* Navigation - Assuming it's in the main site header, not the template for posts yet */
-#main-header nav ul { /* Targeting nav in the main site header */
-    list-style-type: none;
+#main-header nav ul {
+    list-style: none;
     padding: 0;
+    margin: 20px 0 0 0;
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 10px; /* Space from main title */
 }
 #main-header nav ul li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 #main-header nav ul li a {
-    padding: 5px 10px;
-    border: 2px solid #00FF00; /* Neon green border */
-    background-color: #222222; /* Dark background for nav items */
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1em;
     text-decoration: none;
-    font-weight: bold;
-    color: #00FFFF; /* Ensure nav links are cyan */
+    color: #555555;
+    font-weight: 700;
 }
-#main-header nav ul li a:hover {
-    background-color: #333333;
-    color: #FFFF00; /* Yellow hover for nav links */
+#main-header nav ul li a:hover,
+#main-header nav ul li a.active { /* For active page indication */
+    color: #005A9C;
+    border-bottom: 2px solid #005A9C;
+    padding-bottom: 3px;
 }
 
 
-/* Footer */
-#main-footer { /* Targeting the main site footer */
-    border-top: 2px dashed #00FF00; /* Dashed neon green border */
-    padding-top: 15px;
-    margin-top: 30px;
+/* --- Footer --- */
+#main-footer { /* Assuming footer tag with this ID */
+    border-top: 1px solid #DDDDDD; /* Light gray border */
+    padding-top: 20px;
+    margin-top: 40px;
     text-align: center;
     font-size: 0.9em;
-    color: #AAAAAA; /* Lighter gray for footer text */
+    color: #777777;
 }
-#main-footer p { margin: 5px 0; }
-#main-footer a { color: #00FFFF; } /* Ensure footer links are cyan */
-#main-footer a:hover { color: #FFFF00; }
-
-
-/* Basic Button Style (can be refined) */
-.button, input[type="submit"], button { /* General button styling */
-    background-color: #333333;
-    color: #00FF00;
-    border: 2px outset #555555; /* Beveled edge */
-    padding: 8px 15px;
-    text-decoration: none;
+#main-footer p {
+    margin: 5px 0;
+}
+#main-footer a {
+    color: #777777;
     font-weight: bold;
+}
+#main-footer a:hover {
+    color: #005A9C;
+}
+
+/* --- Basic Content Styling (can be refined for blog posts later) --- */
+/* These are general styles for content within .container */
+/* Specific blog post content can be targeted with .post-content or similar */
+.container ul, .container ol { /* Apply to lists directly in container or general content */
+    margin-bottom: 1.2em;
+    padding-left: 25px; /* Indent lists */
+}
+.container ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5em;
+}
+.container ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.5em;
+}
+
+.container blockquote { /* Apply to blockquotes directly in container */
+    border-left: 3px solid #005A9C; /* Accent color border */
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #555555;
+}
+
+.container pre { /* Apply to pre directly in container */
+    background-color: #F0F0F0; /* Light gray background for code */
+    border: 1px solid #DDDDDD;
+    padding: 15px;
+    overflow-x: auto;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.container code { /* Inline code directly in container */
+    background-color: #F0F0F0;
+    color: #333333;
+    padding: 2px 5px;
+    font-size: 0.85em;
+    border-radius: 2px;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+.container pre code { /* Reset for code inside pre */
+    background-color: transparent;
+    padding: 0;
+    font-size: inherit;
+    border-radius: 0;
+}
+
+.container hr { /* Apply to hr directly in container */
+    border: 0;
+    border-top: 1px solid #DDDDDD;
+    margin: 30px 0;
+}
+
+/* --- Buttons --- */
+.button, input[type="submit"], button {
+    display: inline-block;
+    background-color: #005A9C; /* Accent color */
+    color: #FFFFFF;
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
     cursor: pointer;
-    font-family: 'Courier New', Courier, monospace; /* Consistent font */
+    transition: background-color 0.2s ease-in-out;
 }
 .button:hover, input[type="submit"]:hover, button:hover {
-    background-color: #444444;
-    border-style: inset;
+    background-color: #003D6B; /* Darker accent on hover */
+    color: #FFFFFF;
 }
 
-/* --- Retro Blog Post Content Styling --- */
-
-article.blog-post {
-    /* Container for the post, might not need specific rules if .container handles it */
-    margin-top: 20px; /* Space before a post starts */
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px auto;
+        padding: 15px 20px;
+    }
+    h1 { font-size: 2.0em; }
+    h2 { font-size: 1.7em; }
+    #main-header nav ul li {
+        display: block; /* Stack nav items on small screens */
+        margin: 10px 0;
+    }
 }
 
-article.blog-post .post-header h2 { /* Note: Selectors in provided CSS were "article.blog-post header.post-header h2" - I'll use the more specific one */
-    color: #FFFF00; /* Yellow for post titles within the article page */
-    font-size: 1.8em; /* Slightly larger for post titles */
-    text-align: center;
-    border-bottom: 3px double #FF00FF; /* Magenta double border */
-    padding-bottom: 10px;
-    margin-bottom: 20px; /* Already had margin-bottom, ensure it's what we want */
+/* --- Academic Blog Post Content Styling --- */
+
+article.blog-post .post-header { /* Container for post title */
+    margin-bottom: 25px; /* Space below post title */
 }
+
+article.blog-post .post-header h2 { /* Actual post title */
+    font-size: 2.2em; /* Make post titles prominent */
+    color: #333333; /* Standard dark heading color */
+    margin-top: 0; /* Remove top margin if it's the first element */
+    margin-bottom: 10px; /* Space below title */
+    line-height: 1.2;
+    text-align: left; /* Align post titles to the left */
+    border-bottom: none; /* Remove any global heading underlines if not desired for post titles */
+}
+
+/* Optional: metadata for posts (date, author etc.) */
+/*
+.post-meta {
+    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9em;
+    color: #777777;
+    margin-bottom: 20px;
+}
+.post-meta span {
+    margin-right: 15px;
+}
+*/
 
 section.post-content {
-    font-size: 1.1em; /* Slightly larger font for readability */
-    line-height: 1.7;
-    color: #00FF00; /* Neon green for main post text */
+    font-size: 1.05em; /* Slightly larger than base for post readability */
+    line-height: 1.75; /* Generous line height for long text */
 }
 
 section.post-content p {
-    text-align: left; /* Ensure it's not justified, common for retro */
-    margin-bottom: 1.5em; /* More spacing between paragraphs */
-    text-indent: 2em; /* Classic paragraph indentation */
-    line-height: 1.7; /* Inherited from .post-content, but can be explicit */
+    text-align: left; /* Default, ensure no justify from previous themes */
+    margin-bottom: 1.3em;
+    hyphens: auto; /* Enable hyphenation for better text flow if supported */
 }
 
 section.post-content a {
-    color: #00FFFF; /* Cyan links */
-    font-weight: bold; /* Make links stand out more */
-    text-decoration: underline; /* Ensure underline for links in posts */
-}
-section.post-content a:hover {
-    color: #FFFF00; /* Yellow hover */
-    background-color: #333333; /* Darker background on hover */
-    text-decoration: none; /* Remove underline on hover */
-}
-section.post-content a:visited {
-    color: #FF00FF; /* Magenta visited links */
+    /* Uses global 'a' style, but can be overridden if needed */
+    /* For example, slightly bolder or different underline */
+    /* text-decoration: underline; */ /* Ensure underline is clear */
 }
 
 section.post-content ul,
 section.post-content ol {
-    margin-left: 20px; /* Default margin */
-    padding-left: 20px; /* Indent lists */
-    margin-bottom: 1.5em;
+    margin-left: 5px; /* Slightly less indent if preferred */
+    padding-left: 25px; /* Standard indent */
+    margin-bottom: 1.3em;
 }
 section.post-content ul li {
-    list-style-type: square; /* Square bullets - retro! */
-    margin-bottom: 0.5em;
+    list-style-type: disc; /* Standard disc */
+    margin-bottom: 0.6em;
 }
 section.post-content ol li {
-    list-style-type: decimal; /* Standard decimal for ordered lists */
+    list-style-type: decimal; /* Standard decimal */
+    margin-bottom: 0.6em;
+}
+/* Nested lists */
+section.post-content ul ul,
+section.post-content ol ol,
+section.post-content ul ol,
+section.post-content ol ul {
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
+section.post-content ul ul li { list-style-type: circle; }
+section.post-content ul ul ul li { list-style-type: square; }
+
 
 section.post-content blockquote {
-    border: 2px dashed #FF00FF; /* Magenta dashed border */
-    background-color: #1A1A1A; /* Slightly different dark background */
-    padding: 15px;
-    margin: 20px 0; /* Applied to top/bottom, 0 for left/right to allow full width */
+    border-left: 3px solid #005A9C; /* Accent color border, consistent with global */
+    padding: 10px 20px;
+    margin: 25px 0; /* More vertical space */
     font-style: italic;
-    color: #00FFFF; /* Cyan text for quotes */
+    color: #555555; /* Slightly muted text */
+    background-color: #FDFDFD; /* Very subtle off-white for quote background */
 }
-section.post-content blockquote p {
-    text-indent: 0; /* No indent for paragraphs inside blockquote */
-    margin-bottom: 0.5em; /* Spacing for paragraphs in quote */
+section.post-content blockquote p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from last paragraph in quote */
 }
 
 section.post-content pre {
-    background-color: #222222; /* Dark background for code blocks */
-    border: 1px solid #00FF00; /* Neon green border */
-    padding: 15px;
-    overflow-x: auto; /* Scroll for long lines */
-    font-family: 'Lucida Console', 'Courier New', monospace; /* Ensure monospaced font */
-    color: #00FF00; /* Neon green text in code blocks */
-    font-size: 0.9em;
-    white-space: pre-wrap; /* Wrap long lines but preserve formatting */
-    margin-bottom: 1.5em; /* Consistent spacing */
+    font-size: 0.95em; /* Adjust for readability */
+    line-height: 1.6;
 }
-section.post-content code { /* Inline code */
-    background-color: #333333;
-    color: #00FFFF; /* Cyan for inline code */
-    padding: 2px 4px;
-    font-size: 0.9em;
-    border: 1px solid #555555;
-    font-family: 'Lucida Console', 'Courier New', monospace;
-}
-/* Reset code styling if it's inside a pre block, so pre styling takes precedence */
-section.post-content pre code {
-    background-color: transparent;
-    color: inherit; /* Inherit from pre */
-    padding: 0;
-    border: none;
-    font-size: inherit; /* Inherit from pre */
-}
+/* code styling is already defined globally and should be fine */
 
 section.post-content hr {
-    border: 0;
-    height: 3px;
-    background-image: repeating-linear-gradient(45deg, #FF00FF, #FF00FF 5px, transparent 5px, transparent 10px); /* Magenta dashed line */
-    margin: 20px 0;
+    /* Global hr style is fine, or make it more subtle for posts: */
+    /* border-top: 1px solid #EEEEEE; */
+    /* margin: 40px 0; */ /* More space around HRs in posts */
 }
 
 section.post-content img {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 15px auto;
-    border: 2px solid #00FFFF; /* Cyan border for images */
-    box-shadow: 0 0 8px #00FFFF; /* Cyan glow */
+    display: block; /* Center images */
+    margin: 25px auto; /* More vertical space for images */
+    border: 1px solid #DDDDDD; /* Subtle border for images */
+    padding: 3px; /* Small padding around image */
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Very subtle shadow */
 }
-
-/* Styles for elements that were in the old HTML but might not be covered by general tags */
-/* For example, if there were specific IDs for sections beyond #intro, #contact */
-/* #intro, #contact, #resources-nav, #blog-nav might need specific retro styling if they are complex */
-
-/* For simple sections like #intro and #contact, the .container and p styling might be enough */
-/* For navs like #resources-nav and #blog-nav, if they are just lists of links: */
-#resources-nav ul, #blog-nav ul {
-    list-style-type: none; /* Remove default bullets */
-    padding-left: 0;
+/* Optional: Captions for images */
+/*
+section.post-content figure {
+    margin: 20px 0;
 }
-#resources-nav ul li::before, #blog-nav ul li::before {
-    content: "» "; /* Retro bullet */
-    color: #00FF00; /* Neon green bullet */
-}
-#resources-nav h2, #blog-nav h2 { /* Assuming these are used on index.html */
-    /* General h2 styling will apply. Can be overridden if needed. */
-}
-
-/* Ensure that the main header and footer from index.html also get retro styled */
-/* The selectors #main-header and #main-footer are used in the provided CSS */
-/* The nav inside #main-header is also styled. */
-
-/* Remove any specific styling for Schibsted Grotesk font if it was added */
-/* The font-family is now set on body. */
-
-/* Responsive adjustments are often simpler in retro themes */
-/* For example, just letting the .container shrink. */
-/* However, if complex layouts were used, they might need to be simplified or made retro. */
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
-        margin: 5px auto;
-        padding: 10px;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        letter-spacing: 1px; /* Reduce spacing on small screens */
-        font-size: 1.2em; /* Example: Adjust heading sizes */
-    }
-    #main-header h1 { /* Site title */
-      font-size: 1.8em; /* Ensure it's still prominent */
-    }
-    article.blog-post header.post-header h2 { /* Post titles */
-      font-size: 1.5em;
-    }
-
-    header nav ul li {
-        display: block; /* Stack nav items on small screens */
-        margin: 5px 0;
-    }
-}
-
-/* --- Quirky Elements Styling --- */
-
-/* Blinking Text/Icon Animation */
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
-.blinking-element {
-    animation: blink 1.5s infinite;
-}
-
-/* Simple Color Cycle Animation */
-@keyframes color-cycle {
-    0%   { color: #00FF00; } /* Green */
-    25%  { color: #FF00FF; } /* Magenta */
-    50%  { color: #00FFFF; } /* Cyan */
-    75%  { color: #FFFF00; } /* Yellow */
-    100% { color: #00FF00; } /* Back to Green */
-}
-.color-cycling-text {
-    animation: color-cycle 4s infinite;
-    font-weight: bold;
-}
-
-/* Fake Visitor Counter */
-.visitor-counter {
-    display: inline-block;
-    border: 2px solid #00FFFF; /* Cyan border */
-    padding: 5px 10px;
-    margin: 10px 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #00FF00; /* Neon Green */
-    background-color: #222222; /* Dark background */
-    text-align: center;
-    box-shadow: 0 0 5px #00FFFF; /* Cyan glow */
-}
-.visitor-counter span {
-    letter-spacing: 3px; /* Space out the numbers */
-}
-
-/* "Last Updated" Stamp */
-.last-updated {
-    font-size: 0.8em;
-    color: #AAAAAA; /* Light gray */
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* Placeholder for Icons (can be replaced with actual img tags later) */
-/* These will be styled as text or simple CSS shapes for now */
-.quirky-icon {
-    display: inline-block;
-    font-family: 'Courier New', Courier, monospace; /* Or a symbol font if available */
-    font-size: 1.5em; /* Adjust as needed */
-    margin: 0 5px;
-    vertical-align: middle;
-}
-
-/* Specific Icon Examples (using text/CSS for now) */
-.icon-gavel::before {
-    content: "⚖"; /* Scales, or use text like "[G]" */
-    color: #FFD700; /* Gold-ish */
-    font-weight: bold;
-}
-.icon-music::before {
-    content: "♫♪"; /* Musical notes */
-    color: #FF00FF; /* Magenta */
-}
-.icon-floppy::before {
-    content: "[S]"; /* Placeholder for Save/Floppy */
-    color: #00FFFF; /* Cyan */
-    border: 1px solid #00FFFF;
-    padding: 0 2px;
-}
-.icon-computer::before {
-    content: "💻"; /* Computer emoji, might render well */
-    color: #00FF00; /* Green */
-}
-
-
-/* Animated "Under Construction" (Simple CSS version) */
-.under-construction-text {
-    font-weight: bold;
-    color: #FFFF00; /* Yellow */
-    padding: 5px;
-    border: 1px dashed #FFFF00;
-}
-.under-construction-text::before {
-    content: "🚧 "; /* Construction emoji */
-}
-
-
-/* "Powered by HTML" Badge Style */
-.html-badge {
-    border: 1px solid #00FF00;
-    padding: 3px 6px;
-    font-size: 0.8em;
-    color: #00FF00;
-    background-color: #1a1a1a;
-    display: inline-block;
-    margin-top: 5px;
-    text-decoration: none;
-}
-.html-badge:hover {
-    background-color: #00FF00;
-    color: #000000;
-}
-
-/* Styling for image placeholders if actual GIFs are used */
-img.retro-gif {
-    vertical-align: middle;
-    margin: 0 5px;
-    border: 1px solid #555; /* Simple border for GIFs */
-}
-
-/* Marquee-like effect for a very short text (use with extreme caution) */
-/* Better to avoid real <marquee> tag. This is a CSS simulation. */
-.css-marquee {
-    display: inline-block; /* Or block if it's a full line */
-    white-space: nowrap;
-    overflow: hidden;
-    /* For a short text, we might not need animation, just the look */
-    /* If animation is needed:
-    animation: marquee-scroll 10s linear infinite;
-    */
-    border: 1px dashed #FF00FF; /* Magenta dashed border */
-    padding: 2px 5px;
-    color: #FF00FF;
+section.post-content figcaption {
     font-size: 0.9em;
+    color: #777777;
+    text-align: center;
+    margin-top: 5px;
+    font-style: italic;
 }
-
-/* @keyframes marquee-scroll {
-    0%   { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-} */
-/* Commenting out marquee animation for now to keep it simple and less distracting */
+*/

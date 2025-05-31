@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{TITLE}}</title>
+    <title>{{TITLE}} - Krishna Jani</title> <!-- Added name to title -->
     <link rel="stylesheet" href="../style.css">
-    <!-- Google Fonts link removed as it's not part of the retro theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header id="main-header"> <!-- Added id="main-header" for consistency with index.html and style.css -->
-            <h1><a href="../index.html" class="color-cycling-text">Krishna's Scratchpad on the Internet</a> <span class="quirky-icon icon-computer blinking-element"></span></h1>
-            <div style="text-align:center; margin-bottom:10px;">
-                 <span class="under-construction-text">Site is Groovy! (and always evolving)</span>
-            </div>
+        <header id="main-header">
+            <h1><a href="../index.html">Krishna Jani</a></h1>
+            <!-- Optional: Add a subtitle here if desired, e.g., <p class="site-subtitle">Budding Academic / Researcher</p> -->
             <nav>
                 <ul>
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../books.html">Books</a></li>
-                    <li><a href="../music.html">Music</a></li>
-                    <!-- Maybe add a guestbook link later -->
+                    <li><a href="../posts.html">Blog</a></li> <!-- Assuming a general blog/posts page link -->
+                    <li><a href="../research.html">Research</a></li> <!-- Placeholder for Research page -->
+                    <li><a href="../cv.html">CV</a></li> <!-- Placeholder for CV page -->
+                    <li><a href="../contact.html">Contact</a></li> <!-- Placeholder for Contact page -->
                 </ul>
             </nav>
         </header>
         <main>
-            <article class="blog-post">
-                <header class="post-header">
+            <article class="blog-post"> <!-- This class might be specific to blog posts, adjust if this template is for general pages -->
+                <header class="post-header"> <!-- Same as above, might need to adjustment for general pages -->
                     <h2>{{TITLE}}</h2>
                 </header>
                 <section class="post-content">
