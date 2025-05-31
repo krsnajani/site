@@ -1,37 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Krishna's Scratchpad on the Internet</title>
-        <style>
-@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
-        </style>
-    </head>
-    <body style="max-width: 800px; padding=20px; margin:auto; font-family: 'Schibsted Grotesk',sans; line-height: 1.5">
-    <div style="text-align: justify">
-      <h2>Krishna's Scratchpad on the Internet</h2>
-      <p>Namaskaram!</p>
-<p>I am Krishna, and I write a small blog on the Internet called - Krishna's Scratchpad on the Internet.</p>
-<p>As someone who refrains from using modern social media, I find solace in my small personal corner of the internet, where my speech is neither constantly moderated nor subject to self-surveillance by social construct.</p>
-<p>Formally, although my academic pursuits lie in law, I maintain a keen interest in the intersection between law and quantum computing, smart contracts and artificial intelligence. I also built this website from scratch to learn web-development skills.</p>
-<p>If you you like to have a conversation about anything I have talked about here feel free to send me an email: krishnajani@posteo.com</p>
-<p>I maintain an active library of music over at <a href="https://bandcamp.com/krsnaj">Bandcamp!</a></p>
-<p>You may also access my CV <a href="./cv.pdf">here</a></p>
-<h2>Resources:</h2>
-<ul>
-<li><a href="./books.html">Books</a></li>
-<li><a href="./music.html">Music</a></li>
-</ul>
-<h2>Recent Blog Posts</h2>
-<ul>
-<li>
-<p><a href="posts/post-1.html">print("Hello World")</a></p>
-</li>
-<li>
-<p><a href="posts/towards-internet-federalism.html">Towards 'Internet Federalism'</a></p>
-</li>
-</ul>
-
-    </div>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna's Scratchpad on the Internet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header id="main-header">
+            <h1>Krishna's Scratchpad on the Internet</h1>
+        </header>
+        <main>
+            <section id="intro">
+                <p>Namaskaram!</p>
+            <p>I am Krishna, and I write a small blog on the Internet called - Krishna's Scratchpad on the Internet.</p>
+            <p>As someone who refrains from using modern social media, I find solace in my small personal corner of the internet, where my speech is neither constantly moderated nor subject to self-surveillance by social construct.</p>
+            <p>Formally, although my academic pursuits lie in law, I maintain a keen interest in the intersection between law and quantum computing, smart contracts and artificial intelligence. I also built this website from scratch to learn web-development skills.</p>
+        </section>
+        <section id="contact">
+            <p>If you you like to have a conversation about anything I have talked about here feel free to send me an email: <a href="mailto:krishnajani@posteo.com">krishnajani@posteo.com</a></p>
+            <p>I maintain an active library of music over at <a href="https://bandcamp.com/krsnaj" target="_blank" rel="noopener noreferrer">Bandcamp!</a></p>
+            <p>You may also access my CV <a href="./cv.pdf" target="_blank" rel="noopener noreferrer">here</a></p>
+        </section>
+        <nav id="resources-nav">
+            <h2>Resources:</h2>
+            <ul>
+                <li><a href="./books.html">Books</a></li>
+                <li><a href="./music.html">Music</a></li>
+            </ul>
+        </nav>
+        <nav id="blog-nav">
+            <h2>Recent Blog Posts</h2>
+            <ul>
+                <li><a href="posts/post-1.html">print("Hello World")</a></li>
+                <li><a href="posts/towards-internet-federalism.html">Towards 'Internet Federalism'</a></li>
+            </ul>
+        </nav>
+    </main>
+    <footer id="main-footer">
+        <p>&copy; Krishna Jani</p>
+    </footer>
+    </div> <!-- .container -->
+</body>
 </html>

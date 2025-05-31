@@ -1,0 +1,143 @@
+/* CSS Reset and Global Styles */
+html {
+  box-sizing: border-box;
+  font-size: 16px; /* Base font size for rem units */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  background-color: #F8F9FA; /* Light gray background */
+  color: #212529; /* Dark gray text for readability */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 1rem; /* Responsive padding */
+}
+
+.container {
+  width: 100%;
+  max-width: 800px; /* Max content width */
+  margin: 0 auto; /* Center container */
+  padding: 2rem 1rem; /* Padding inside the container */
+}
+
+/* Let main content expand to push footer down */
+main {
+  flex-grow: 1;
+}
+
+/* Header */
+#main-header {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #DEE2E6; /* Subtle border */
+  margin-bottom: 2rem;
+}
+
+#main-header h1 {
+  font-size: 2.25rem; /* Responsive font size */
+  font-weight: 700; /* Bolder headings */
+  color: #0056b3; /* Darker shade of accent blue for header */
+}
+
+/* Content Sections */
+main section {
+  margin-bottom: 2rem;
+  background-color: #FFFFFF; /* White background for content sections */
+  padding: 1.5rem;
+  border-radius: 8px; /* Rounded corners for sections */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+main section#intro p,
+main section#contact p {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: #007bff; /* Accent color for links */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: #0056b3; /* Darker shade on hover/focus */
+  text-decoration: underline;
+}
+
+/* Navigation Sections */
+#resources-nav h2,
+#blog-nav h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #343A40; /* Darker heading color */
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #E9ECEF;
+}
+
+#resources-nav ul,
+#blog-nav ul {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0;
+}
+
+#resources-nav ul li,
+#blog-nav ul li {
+  margin-bottom: 0.75rem; /* Space between list items */
+  padding-left: 1.5rem; /* Indentation for items */
+  position: relative;
+}
+
+/* Custom bullet points for navigation lists */
+#resources-nav ul li::before,
+#blog-nav ul li::before {
+  content: "▹"; /* Using a unicode character as a custom bullet */
+  position: absolute;
+  left: 0;
+  color: #007bff; /* Accent color for bullets */
+  font-weight: bold;
+}
+
+
+/* Footer */
+#main-footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto; /* Pushes footer to the bottom */
+  border-top: 1px solid #DEE2E6; /* Subtle border */
+  font-size: 0.9rem;
+  color: #6C757D; /* Muted text color for footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 0 0.5rem;
+  }
+  .container {
+    padding: 1rem 0.5rem;
+  }
+  #main-header h1 {
+    font-size: 2rem;
+  }
+  #resources-nav h2,
+  #blog-nav h2 {
+    font-size: 1.5rem;
+  }
+  main section {
+    padding: 1rem;
+  }
+}
