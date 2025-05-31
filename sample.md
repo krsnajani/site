@@ -1,9 +1,13 @@
 ---
-title: My Markdown Post
+title: My Academic Sample Post
 ---
-# This is a Markdown Post
+# This is a Sample Markdown Post
 
-This is a paragraph in **markdown**.
+This is a paragraph in **markdown** for the academic theme.
 
-- Item 1
-- Item 2
+It should be styled according to the new academic `style.css`.
+
+- List item 1
+- List item 2
+
+Another paragraph.
