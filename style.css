@@ -1,143 +1,424 @@
-/* CSS Reset and Global Styles */
-html {
-  box-sizing: border-box;
-  font-size: 16px; /* Base font size for rem units */
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
+/* General Reset/Base */
 body {
-  font-family: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.7;
-  background-color: #F8F9FA; /* Light gray background */
-  color: #212529; /* Dark gray text for readability */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 0 1rem; /* Responsive padding */
+    background-color: #000000; /* Black background */
+    color: #00FF00; /* Neon green text */
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Base font size */
+    display: block; /* Override any previous flex settings on body */
 }
 
 .container {
-  width: 100%;
-  max-width: 800px; /* Max content width */
-  margin: 0 auto; /* Center container */
-  padding: 2rem 1rem; /* Padding inside the container */
+    width: 90%;
+    max-width: 800px; /* Keep it somewhat contained */
+    margin: 10px auto;
+    padding: 15px;
+    border: 3px solid #00FF00; /* Neon green border for the main container */
+    box-shadow: 0 0 10px #00FF00; /* Neon glow effect */
+    background-color: #111111; /* Slightly lighter black for container */
 }
 
-/* Let main content expand to push footer down */
-main {
-  flex-grow: 1;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lucida Console', 'Courier New', Courier, monospace; /* More blocky/pixel-like if available */
+    color: #FF00FF; /* Magenta for headings */
+    text-transform: uppercase; /* Classic retro feel */
+    letter-spacing: 2px;
+    border-bottom: 2px solid #00FFFF; /* Cyan underline */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+/* Ensure links within headers inherit the new heading color or have specific retro styling */
+#main-header h1 a { /* Specific for site title / main header link */
+    color: #FF00FF;
+    text-decoration: none;
+}
+#main-header h1 a:hover {
+    color: #FFFF00; /* Yellow hover for main site title */
 }
 
-/* Header */
-#main-header {
-  text-align: center;
-  padding: 2rem 0;
-  border-bottom: 1px solid #DEE2E6; /* Subtle border */
-  margin-bottom: 2rem;
+/* General heading links if any others exist, e.g. post titles if they are links */
+h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: #FF00FF; /* Match heading color */
+    text-decoration: none; /* No underline, rely on border */
+}
+h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    color: #FFFF00;
 }
 
-#main-header h1 {
-  font-size: 2.25rem; /* Responsive font size */
-  font-weight: 700; /* Bolder headings */
-  color: #0056b3; /* Darker shade of accent blue for header */
-}
-
-/* Content Sections */
-main section {
-  margin-bottom: 2rem;
-  background-color: #FFFFFF; /* White background for content sections */
-  padding: 1.5rem;
-  border-radius: 8px; /* Rounded corners for sections */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-}
-
-main section#intro p,
-main section#contact p {
-  text-align: justify;
-  margin-bottom: 1rem;
-}
 
 /* Links */
 a {
-  color: #007bff; /* Accent color for links */
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+    color: #00FFFF; /* Cyan links */
+    text-decoration: underline;
+}
+a:hover {
+    color: #FFFF00; /* Yellow hover */
+    text-decoration: none;
+    background-color: #222222; /* Dark highlight on hover */
+}
+a:visited { /* Often avoided or styled same as 'a' in modern design, but classic for retro */
+    color: #FF00FF; /* Visited links magenta */
 }
 
-a:hover,
-a:focus {
-  color: #0056b3; /* Darker shade on hover/focus */
-  text-decoration: underline;
+/* Navigation - Assuming it's in the main site header, not the template for posts yet */
+#main-header nav ul { /* Targeting nav in the main site header */
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Space from main title */
 }
-
-/* Navigation Sections */
-#resources-nav h2,
-#blog-nav h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #343A40; /* Darker heading color */
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #E9ECEF;
+#main-header nav ul li {
+    display: inline-block;
+    margin: 0 10px;
 }
-
-#resources-nav ul,
-#blog-nav ul {
-  list-style-type: none; /* Remove default bullets */
-  padding-left: 0;
+#main-header nav ul li a {
+    padding: 5px 10px;
+    border: 2px solid #00FF00; /* Neon green border */
+    background-color: #222222; /* Dark background for nav items */
+    text-decoration: none;
+    font-weight: bold;
+    color: #00FFFF; /* Ensure nav links are cyan */
 }
-
-#resources-nav ul li,
-#blog-nav ul li {
-  margin-bottom: 0.75rem; /* Space between list items */
-  padding-left: 1.5rem; /* Indentation for items */
-  position: relative;
-}
-
-/* Custom bullet points for navigation lists */
-#resources-nav ul li::before,
-#blog-nav ul li::before {
-  content: "▹"; /* Using a unicode character as a custom bullet */
-  position: absolute;
-  left: 0;
-  color: #007bff; /* Accent color for bullets */
-  font-weight: bold;
+#main-header nav ul li a:hover {
+    background-color: #333333;
+    color: #FFFF00; /* Yellow hover for nav links */
 }
 
 
 /* Footer */
-#main-footer {
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: auto; /* Pushes footer to the bottom */
-  border-top: 1px solid #DEE2E6; /* Subtle border */
-  font-size: 0.9rem;
-  color: #6C757D; /* Muted text color for footer */
+#main-footer { /* Targeting the main site footer */
+    border-top: 2px dashed #00FF00; /* Dashed neon green border */
+    padding-top: 15px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #AAAAAA; /* Lighter gray for footer text */
+}
+#main-footer p { margin: 5px 0; }
+#main-footer a { color: #00FFFF; } /* Ensure footer links are cyan */
+#main-footer a:hover { color: #FFFF00; }
+
+
+/* Basic Button Style (can be refined) */
+.button, input[type="submit"], button { /* General button styling */
+    background-color: #333333;
+    color: #00FF00;
+    border: 2px outset #555555; /* Beveled edge */
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace; /* Consistent font */
+}
+.button:hover, input[type="submit"]:hover, button:hover {
+    background-color: #444444;
+    border-style: inset;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  body {
-    padding: 0 0.5rem;
-  }
-  .container {
-    padding: 1rem 0.5rem;
-  }
-  #main-header h1 {
-    font-size: 2rem;
-  }
-  #resources-nav h2,
-  #blog-nav h2 {
-    font-size: 1.5rem;
-  }
-  main section {
-    padding: 1rem;
-  }
+/* --- Retro Blog Post Content Styling --- */
+
+article.blog-post {
+    /* Container for the post, might not need specific rules if .container handles it */
+    margin-top: 20px; /* Space before a post starts */
 }
+
+article.blog-post .post-header h2 { /* Note: Selectors in provided CSS were "article.blog-post header.post-header h2" - I'll use the more specific one */
+    color: #FFFF00; /* Yellow for post titles within the article page */
+    font-size: 1.8em; /* Slightly larger for post titles */
+    text-align: center;
+    border-bottom: 3px double #FF00FF; /* Magenta double border */
+    padding-bottom: 10px;
+    margin-bottom: 20px; /* Already had margin-bottom, ensure it's what we want */
+}
+
+section.post-content {
+    font-size: 1.1em; /* Slightly larger font for readability */
+    line-height: 1.7;
+    color: #00FF00; /* Neon green for main post text */
+}
+
+section.post-content p {
+    text-align: left; /* Ensure it's not justified, common for retro */
+    margin-bottom: 1.5em; /* More spacing between paragraphs */
+    text-indent: 2em; /* Classic paragraph indentation */
+    line-height: 1.7; /* Inherited from .post-content, but can be explicit */
+}
+
+section.post-content a {
+    color: #00FFFF; /* Cyan links */
+    font-weight: bold; /* Make links stand out more */
+    text-decoration: underline; /* Ensure underline for links in posts */
+}
+section.post-content a:hover {
+    color: #FFFF00; /* Yellow hover */
+    background-color: #333333; /* Darker background on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+section.post-content a:visited {
+    color: #FF00FF; /* Magenta visited links */
+}
+
+section.post-content ul,
+section.post-content ol {
+    margin-left: 20px; /* Default margin */
+    padding-left: 20px; /* Indent lists */
+    margin-bottom: 1.5em;
+}
+section.post-content ul li {
+    list-style-type: square; /* Square bullets - retro! */
+    margin-bottom: 0.5em;
+}
+section.post-content ol li {
+    list-style-type: decimal; /* Standard decimal for ordered lists */
+    margin-bottom: 0.5em;
+}
+
+section.post-content blockquote {
+    border: 2px dashed #FF00FF; /* Magenta dashed border */
+    background-color: #1A1A1A; /* Slightly different dark background */
+    padding: 15px;
+    margin: 20px 0; /* Applied to top/bottom, 0 for left/right to allow full width */
+    font-style: italic;
+    color: #00FFFF; /* Cyan text for quotes */
+}
+section.post-content blockquote p {
+    text-indent: 0; /* No indent for paragraphs inside blockquote */
+    margin-bottom: 0.5em; /* Spacing for paragraphs in quote */
+}
+
+section.post-content pre {
+    background-color: #222222; /* Dark background for code blocks */
+    border: 1px solid #00FF00; /* Neon green border */
+    padding: 15px;
+    overflow-x: auto; /* Scroll for long lines */
+    font-family: 'Lucida Console', 'Courier New', monospace; /* Ensure monospaced font */
+    color: #00FF00; /* Neon green text in code blocks */
+    font-size: 0.9em;
+    white-space: pre-wrap; /* Wrap long lines but preserve formatting */
+    margin-bottom: 1.5em; /* Consistent spacing */
+}
+section.post-content code { /* Inline code */
+    background-color: #333333;
+    color: #00FFFF; /* Cyan for inline code */
+    padding: 2px 4px;
+    font-size: 0.9em;
+    border: 1px solid #555555;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+}
+/* Reset code styling if it's inside a pre block, so pre styling takes precedence */
+section.post-content pre code {
+    background-color: transparent;
+    color: inherit; /* Inherit from pre */
+    padding: 0;
+    border: none;
+    font-size: inherit; /* Inherit from pre */
+}
+
+section.post-content hr {
+    border: 0;
+    height: 3px;
+    background-image: repeating-linear-gradient(45deg, #FF00FF, #FF00FF 5px, transparent 5px, transparent 10px); /* Magenta dashed line */
+    margin: 20px 0;
+}
+
+section.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border: 2px solid #00FFFF; /* Cyan border for images */
+    box-shadow: 0 0 8px #00FFFF; /* Cyan glow */
+}
+
+/* Styles for elements that were in the old HTML but might not be covered by general tags */
+/* For example, if there were specific IDs for sections beyond #intro, #contact */
+/* #intro, #contact, #resources-nav, #blog-nav might need specific retro styling if they are complex */
+
+/* For simple sections like #intro and #contact, the .container and p styling might be enough */
+/* For navs like #resources-nav and #blog-nav, if they are just lists of links: */
+#resources-nav ul, #blog-nav ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+}
+#resources-nav ul li::before, #blog-nav ul li::before {
+    content: "» "; /* Retro bullet */
+    color: #00FF00; /* Neon green bullet */
+}
+#resources-nav h2, #blog-nav h2 { /* Assuming these are used on index.html */
+    /* General h2 styling will apply. Can be overridden if needed. */
+}
+
+/* Ensure that the main header and footer from index.html also get retro styled */
+/* The selectors #main-header and #main-footer are used in the provided CSS */
+/* The nav inside #main-header is also styled. */
+
+/* Remove any specific styling for Schibsted Grotesk font if it was added */
+/* The font-family is now set on body. */
+
+/* Responsive adjustments are often simpler in retro themes */
+/* For example, just letting the .container shrink. */
+/* However, if complex layouts were used, they might need to be simplified or made retro. */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        margin: 5px auto;
+        padding: 10px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 1px; /* Reduce spacing on small screens */
+        font-size: 1.2em; /* Example: Adjust heading sizes */
+    }
+    #main-header h1 { /* Site title */
+      font-size: 1.8em; /* Ensure it's still prominent */
+    }
+    article.blog-post header.post-header h2 { /* Post titles */
+      font-size: 1.5em;
+    }
+
+    header nav ul li {
+        display: block; /* Stack nav items on small screens */
+        margin: 5px 0;
+    }
+}
+
+/* --- Quirky Elements Styling --- */
+
+/* Blinking Text/Icon Animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+.blinking-element {
+    animation: blink 1.5s infinite;
+}
+
+/* Simple Color Cycle Animation */
+@keyframes color-cycle {
+    0%   { color: #00FF00; } /* Green */
+    25%  { color: #FF00FF; } /* Magenta */
+    50%  { color: #00FFFF; } /* Cyan */
+    75%  { color: #FFFF00; } /* Yellow */
+    100% { color: #00FF00; } /* Back to Green */
+}
+.color-cycling-text {
+    animation: color-cycle 4s infinite;
+    font-weight: bold;
+}
+
+/* Fake Visitor Counter */
+.visitor-counter {
+    display: inline-block;
+    border: 2px solid #00FFFF; /* Cyan border */
+    padding: 5px 10px;
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00FF00; /* Neon Green */
+    background-color: #222222; /* Dark background */
+    text-align: center;
+    box-shadow: 0 0 5px #00FFFF; /* Cyan glow */
+}
+.visitor-counter span {
+    letter-spacing: 3px; /* Space out the numbers */
+}
+
+/* "Last Updated" Stamp */
+.last-updated {
+    font-size: 0.8em;
+    color: #AAAAAA; /* Light gray */
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Placeholder for Icons (can be replaced with actual img tags later) */
+/* These will be styled as text or simple CSS shapes for now */
+.quirky-icon {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace; /* Or a symbol font if available */
+    font-size: 1.5em; /* Adjust as needed */
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+/* Specific Icon Examples (using text/CSS for now) */
+.icon-gavel::before {
+    content: "⚖"; /* Scales, or use text like "[G]" */
+    color: #FFD700; /* Gold-ish */
+    font-weight: bold;
+}
+.icon-music::before {
+    content: "♫♪"; /* Musical notes */
+    color: #FF00FF; /* Magenta */
+}
+.icon-floppy::before {
+    content: "[S]"; /* Placeholder for Save/Floppy */
+    color: #00FFFF; /* Cyan */
+    border: 1px solid #00FFFF;
+    padding: 0 2px;
+}
+.icon-computer::before {
+    content: "💻"; /* Computer emoji, might render well */
+    color: #00FF00; /* Green */
+}
+
+
+/* Animated "Under Construction" (Simple CSS version) */
+.under-construction-text {
+    font-weight: bold;
+    color: #FFFF00; /* Yellow */
+    padding: 5px;
+    border: 1px dashed #FFFF00;
+}
+.under-construction-text::before {
+    content: "🚧 "; /* Construction emoji */
+}
+
+
+/* "Powered by HTML" Badge Style */
+.html-badge {
+    border: 1px solid #00FF00;
+    padding: 3px 6px;
+    font-size: 0.8em;
+    color: #00FF00;
+    background-color: #1a1a1a;
+    display: inline-block;
+    margin-top: 5px;
+    text-decoration: none;
+}
+.html-badge:hover {
+    background-color: #00FF00;
+    color: #000000;
+}
+
+/* Styling for image placeholders if actual GIFs are used */
+img.retro-gif {
+    vertical-align: middle;
+    margin: 0 5px;
+    border: 1px solid #555; /* Simple border for GIFs */
+}
+
+/* Marquee-like effect for a very short text (use with extreme caution) */
+/* Better to avoid real <marquee> tag. This is a CSS simulation. */
+.css-marquee {
+    display: inline-block; /* Or block if it's a full line */
+    white-space: nowrap;
+    overflow: hidden;
+    /* For a short text, we might not need animation, just the look */
+    /* If animation is needed:
+    animation: marquee-scroll 10s linear infinite;
+    */
+    border: 1px dashed #FF00FF; /* Magenta dashed border */
+    padding: 2px 5px;
+    color: #FF00FF;
+    font-size: 0.9em;
+}
+
+/* @keyframes marquee-scroll {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+} */
+/* Commenting out marquee animation for now to keep it simple and less distracting */
