@@ -4,10 +4,11 @@
 body {
     background-color: #F8F8F8; /* Off-white background */
     color: #333333; /* Dark gray text */
-    font-family: 'Merriweather', Georgia, 'Times New Roman', serif; /* Body font */
+    font-family: 'Helvetica', Arial, sans-serif; /* Body font */
     line-height: 1.7;
     font-size: 17px; /* Slightly larger base font for readability */
     margin: 0;
+    text-align: justify;
     padding: 0;
     -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
     -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
@@ -39,6 +40,7 @@ h4 { font-size: 1.3em; }
 
 p {
     margin-bottom: 1.2em;
+    text-align: justify;
 }
 
 a {
@@ -243,11 +245,12 @@ article.blog-post .post-header h2 { /* Actual post title */
 
 section.post-content {
     font-size: 1.05em; /* Slightly larger than base for post readability */
+    text-align: justify;
     line-height: 1.75; /* Generous line height for long text */
 }
 
 section.post-content p {
-    text-align: left; /* Default, ensure no justify from previous themes */
+    text-align: justify; /* Default, ensure no justify from previous themes */
     margin-bottom: 1.3em;
     hyphens: auto; /* Enable hyphenation for better text flow if supported */
 }
