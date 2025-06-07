@@ -1,5 +1,0 @@
-My Plain Text Post Title
-This is the first paragraph of a plain text file.
-It will be converted to HTML.
-
-This is another paragraph.

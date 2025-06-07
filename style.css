@@ -1,336 +1,50 @@
 /* === Academic Professional Theme === */
 
-/* --- Global Resets & Base --- */
 body {
-    background-color: #F8F8F8; /* Off-white background */
-    color: #333333; /* Dark gray text */
-    font-family: 'Helvetica', Arial, sans-serif; /* Body font */
-    line-height: 1.7;
-    font-size: 17px; /* Slightly larger base font for readability */
-    margin: 0;
-    text-align: justify;
-    padding: 0;
-    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
-    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+	background-color: #F8F4E7; color: #552800;	
+	max-width: 50%;
+	font-size: 18px;
+	margin: auto;
+	text-align: justify;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+h1 {
+	font-variant: small-caps;
+}
+
+
+nav ul {
+	list-style: none ;
+	text-align: center ;
+	padding-left: 0 ;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+nav ul li {
+	display: inline ;
+	margin: .25em ;
+}
+
+
+.site-subtitle {
+	text-align: center;
+}
+
+footer {
+	text-align: center;
 }
 
 .container {
-    max-width: 850px; /* Comfortable reading width */
-    margin: 30px auto;
-    padding: 20px 40px;
-    background-color: #FFFFFF; /* White content background */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
-    border-radius: 3px; /* Slight rounding of container corners */
+  display: grid;
+  column-gap: 40px;
+  grid-template-columns:1fr 1fr;
 }
 
-/* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif; /* Heading font */
-    color: #222222; /* Slightly darker for headings */
-    line-height: 1.3;
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-    font-weight: 700; /* Bold headings */
+.rounded img {
+	border-radius: 50% ;
 }
-
-h1 { font-size: 2.4em; }
-h2 { font-size: 2.0em; }
-h3 { font-size: 1.6em; }
-h4 { font-size: 1.3em; }
-
-p {
-    margin-bottom: 1.2em;
-    text-align: justify;
-}
-
-a {
-    color: #005A9C; /* Muted academic blue for links */
-    text-decoration: none;
-    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-}
-a:hover, a:focus {
-    color: #003D6B; /* Darker blue on hover */
-    text-decoration: underline;
-}
-
-/* --- Header & Navigation --- */
-#main-header { /* Assuming header tag with this ID from previous structure */
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #DDDDDD; /* Light gray border */
-    text-align: center; /* Center header content */
-}
-
-#main-header h1 {
-    font-size: 2.8em;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-#main-header h1 a {
-    color: #333333;
-    text-decoration: none;
-}
-#main-header h1 a:hover {
-    color: #005A9C;
-}
-
-#main-header .site-subtitle { /* For optional subtitle like "PhD Candidate" */
-    font-size: 1.1em;
-    color: #777777;
-    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-    margin-top: 0;
-}
-
-#main-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-    text-align: center;
-}
-#main-header nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-#main-header nav ul li a {
-    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.1em;
-    text-decoration: none;
-    color: #555555;
-    font-weight: 700;
-}
-#main-header nav ul li a:hover,
-#main-header nav ul li a.active { /* For active page indication */
-    color: #005A9C;
-    border-bottom: 2px solid #005A9C;
-    padding-bottom: 3px;
-}
-
-
-/* --- Footer --- */
-#main-footer { /* Assuming footer tag with this ID */
-    border-top: 1px solid #DDDDDD; /* Light gray border */
-    padding-top: 20px;
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #777777;
-}
-#main-footer p {
-    margin: 5px 0;
-}
-#main-footer a {
-    color: #777777;
-    font-weight: bold;
-}
-#main-footer a:hover {
-    color: #005A9C;
-}
-
-/* --- Basic Content Styling (can be refined for blog posts later) --- */
-/* These are general styles for content within .container */
-/* Specific blog post content can be targeted with .post-content or similar */
-.container ul, .container ol { /* Apply to lists directly in container or general content */
-    margin-bottom: 1.2em;
-    padding-left: 25px; /* Indent lists */
-}
-.container ul li {
-    list-style-type: disc;
-    margin-bottom: 0.5em;
-}
-.container ol li {
-    list-style-type: decimal;
-    margin-bottom: 0.5em;
-}
-
-.container blockquote { /* Apply to blockquotes directly in container */
-    border-left: 3px solid #005A9C; /* Accent color border */
-    padding-left: 20px;
-    margin: 20px 0;
-    font-style: italic;
-    color: #555555;
-}
-
-.container pre { /* Apply to pre directly in container */
-    background-color: #F0F0F0; /* Light gray background for code */
-    border: 1px solid #DDDDDD;
-    padding: 15px;
-    overflow-x: auto;
-    font-family: 'Roboto Mono', 'Courier New', monospace;
-    font-size: 0.9em;
-    line-height: 1.5;
-    border-radius: 3px;
-}
-.container code { /* Inline code directly in container */
-    background-color: #F0F0F0;
-    color: #333333;
-    padding: 2px 5px;
-    font-size: 0.85em;
-    border-radius: 2px;
-    font-family: 'Roboto Mono', 'Courier New', monospace;
-}
-.container pre code { /* Reset for code inside pre */
-    background-color: transparent;
-    padding: 0;
-    font-size: inherit;
-    border-radius: 0;
-}
-
-.container hr { /* Apply to hr directly in container */
-    border: 0;
-    border-top: 1px solid #DDDDDD;
-    margin: 30px 0;
-}
-
-/* --- Buttons --- */
-.button, input[type="submit"], button {
-    display: inline-block;
-    background-color: #005A9C; /* Accent color */
-    color: #FFFFFF;
-    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-.button:hover, input[type="submit"]:hover, button:hover {
-    background-color: #003D6B; /* Darker accent on hover */
-    color: #FFFFFF;
-}
-
-/* --- Responsive adjustments --- */
-@media (max-width: 768px) {
-    .container {
-        margin: 15px auto;
-        padding: 15px 20px;
-    }
-    h1 { font-size: 2.0em; }
-    h2 { font-size: 1.7em; }
-    #main-header nav ul li {
-        display: block; /* Stack nav items on small screens */
-        margin: 10px 0;
-    }
-}
-
-/* --- Academic Blog Post Content Styling --- */
-
-article.blog-post .post-header { /* Container for post title */
-    margin-bottom: 25px; /* Space below post title */
-}
-
-article.blog-post .post-header h2 { /* Actual post title */
-    font-size: 2.2em; /* Make post titles prominent */
-    color: #333333; /* Standard dark heading color */
-    margin-top: 0; /* Remove top margin if it's the first element */
-    margin-bottom: 10px; /* Space below title */
-    line-height: 1.2;
-    text-align: left; /* Align post titles to the left */
-    border-bottom: none; /* Remove any global heading underlines if not desired for post titles */
-}
-
-/* Optional: metadata for posts (date, author etc.) */
-/*
-.post-meta {
-    font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.9em;
-    color: #777777;
-    margin-bottom: 20px;
-}
-.post-meta span {
-    margin-right: 15px;
-}
-*/
-
-section.post-content {
-    font-size: 1.05em; /* Slightly larger than base for post readability */
-    text-align: justify;
-    line-height: 1.75; /* Generous line height for long text */
-}
-
-section.post-content p {
-    text-align: justify; /* Default, ensure no justify from previous themes */
-    margin-bottom: 1.3em;
-    hyphens: auto; /* Enable hyphenation for better text flow if supported */
-}
-
-section.post-content a {
-    /* Uses global 'a' style, but can be overridden if needed */
-    /* For example, slightly bolder or different underline */
-    /* text-decoration: underline; */ /* Ensure underline is clear */
-}
-
-section.post-content ul,
-section.post-content ol {
-    margin-left: 5px; /* Slightly less indent if preferred */
-    padding-left: 25px; /* Standard indent */
-    margin-bottom: 1.3em;
-}
-section.post-content ul li {
-    list-style-type: disc; /* Standard disc */
-    margin-bottom: 0.6em;
-}
-section.post-content ol li {
-    list-style-type: decimal; /* Standard decimal */
-    margin-bottom: 0.6em;
-}
-/* Nested lists */
-section.post-content ul ul,
-section.post-content ol ol,
-section.post-content ul ol,
-section.post-content ol ul {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-section.post-content ul ul li { list-style-type: circle; }
-section.post-content ul ul ul li { list-style-type: square; }
-
-
-section.post-content blockquote {
-    border-left: 3px solid #005A9C; /* Accent color border, consistent with global */
-    padding: 10px 20px;
-    margin: 25px 0; /* More vertical space */
-    font-style: italic;
-    color: #555555; /* Slightly muted text */
-    background-color: #FDFDFD; /* Very subtle off-white for quote background */
-}
-section.post-content blockquote p:last-child {
-    margin-bottom: 0; /* Remove bottom margin from last paragraph in quote */
-}
-
-section.post-content pre {
-    font-size: 0.95em; /* Adjust for readability */
-    line-height: 1.6;
-}
-/* code styling is already defined globally and should be fine */
-
-section.post-content hr {
-    /* Global hr style is fine, or make it more subtle for posts: */
-    /* border-top: 1px solid #EEEEEE; */
-    /* margin: 40px 0; */ /* More space around HRs in posts */
-}
-
-section.post-content img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Center images */
-    margin: 25px auto; /* More vertical space for images */
-    border: 1px solid #DDDDDD; /* Subtle border for images */
-    padding: 3px; /* Small padding around image */
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Very subtle shadow */
-}
-/* Optional: Captions for images */
-/*
-section.post-content figure {
-    margin: 20px 0;
-}
-section.post-content figcaption {
-    font-size: 0.9em;
-    color: #777777;
-    text-align: center;
-    margin-top: 5px;
-    font-style: italic;
-}
-*/

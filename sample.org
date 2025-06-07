@@ -1,8 +1,0 @@
-#+TITLE: My Org Mode Post
-
-* This is an Org Mode Post
-
-This is a paragraph in /org mode/.
-
-- Item A
-- Item B
